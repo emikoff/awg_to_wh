@@ -3,8 +3,8 @@
 set -Eeuo pipefail
 readonly CASCADE_DIR=/etc/awg-wg-cascade
 readonly WG_DIR=/etc/wireguard
+# shellcheck disable=SC2034 # AWG_CONF is consumed by scripts that source common.sh.
 readonly AWG_CONF=/etc/amnezia/amneziawg/awg0.conf
-readonly AWG_SUBNET=10.66.66.0/24
 log() { printf '[cascade] %s\n' "$*"; }
 die() { printf '[cascade] ERROR: %s\n' "$*" >&2; exit 1; }
 need_root() { (( EUID == 0 )) || die 'Запустите через sudo.'; }
