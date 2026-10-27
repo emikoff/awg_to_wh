@@ -1,0 +1,11 @@
+# Never commit secrets, client configurations or backup archives.
+*.key
+*.conf
+*.png
+*.vpnuri
+*.tar.gz
+.env
+.env.*
+!*.example
+__pycache__/
+.DS_Store
